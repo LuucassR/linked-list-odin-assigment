@@ -126,8 +126,12 @@ class LinkedList {
 
   removeAr(index) {
     if (index === 0) {
-      // tu código acá
+      this.head = this.head.nextNode
       return
     }
+
+    let p = this.at(index - 1)
+    p.nextNode = p.nextNode.nextNode
+
   }
 }
