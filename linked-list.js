@@ -102,7 +102,7 @@ class LinkedList {
   toString() {
     let p = this.head
     let str = ''
-    
+
     while (p !== null) {
       str += `( ${p.value} ) ->`
       p.nextNode
@@ -111,7 +111,23 @@ class LinkedList {
     return str + 'null'
   }
 
-  insertAt(value, index) {}
+  insertAt(value, index) {
+    if (index == 0) {
+      this.prepend(value)
+      return
+    }
 
-  removeAr(index) {}
+    let p = this.at(index - 1)
+    const newNode = new Node(value)
+    let temp = p.nextNode
+    newNode.nextNode = temp
+    p.nextNode = newNode
+  }
+
+  removeAr(index) {
+    if (index === 0) {
+      // tu código acá
+      return
+    }
+  }
 }
